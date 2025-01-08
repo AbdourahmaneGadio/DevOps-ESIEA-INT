@@ -12,13 +12,14 @@ stages {
         steps {
             script {
                 def name = "${params.NAME}"
-                def gender = "${params.GENDER}"
-                if(gender == "Male") {
-                echo "Mr. $name"
-                        }
-                else {
-                echo "Mrs. $name"
-                }
+                def branch = "${params.BRANCH}"
+                def desc = "${params.DESC}"
+                def isSkipTest = "${params.SKIP_TEST}"
+                def pwd = "${params.SONAR_SERVER_PWD}"
+		echo "Name: $name"
+		echo "Branch: $branch"
+		echo "Description: $desc"
+		echo "isSkipTest: $isSkipTest"
             }
         }
     }
